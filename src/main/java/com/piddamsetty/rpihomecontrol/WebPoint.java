@@ -1,10 +1,7 @@
-package com.piddamsetty.praneetwebpro1;
+package com.piddamsetty.rpihomecontrol;
 
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Random;
 
 /**
  * Created by rewatiraman.
