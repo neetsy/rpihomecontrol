@@ -17,7 +17,7 @@ public class WebPoint {
 
     @RequestMapping("/")
     public String root() {
-        if(indexPage != null) {
+        if(indexPage == null) {
             initialize();
         }
         return indexPage;
