@@ -24,7 +24,6 @@ public class RpiService {
 
     public void turnOnPin1(){
         try {
-            pin1.blink(500, 15000);
             pin1.high();
         } catch (Exception e) {
             System.out.println("Cannot turn on led 1. Exception: "+e.getMessage());
