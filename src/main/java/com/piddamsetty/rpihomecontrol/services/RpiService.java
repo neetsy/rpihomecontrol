@@ -17,4 +17,9 @@ public class RpiService {
 
     }
 
+    public void turnOffPin1() {
+        gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
+    }
+
+
 }
