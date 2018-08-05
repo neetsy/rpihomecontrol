@@ -16,7 +16,7 @@ public class RpiService {
 
     public RpiService() {
         try {
-            pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
+            pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_07);
         } catch (Exception e) {
             System.out.println("Cannot create led 1. Exception: "+e.getMessage());
         }
