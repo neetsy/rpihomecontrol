@@ -16,7 +16,7 @@ public class RpiService {
 
     public RpiService() {
         try {
-            pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
+            pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_04);
         } catch (Exception e) {
             System.out.println("Cannot create led 1. Exception: "+e.getMessage());
         }
@@ -24,7 +24,8 @@ public class RpiService {
 
     public void turnOnPin1(){
         try {
-           pin1.high();
+            pin1.blink(500, 15000);
+            pin1.high();
         } catch (Exception e) {
             System.out.println("Cannot turn on led 1. Exception: "+e.getMessage());
         }
