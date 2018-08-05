@@ -1,5 +1,6 @@
 package com.piddamsetty.rpihomecontrol;
 
+import com.piddamsetty.rpihomecontrol.services.FileServices;
 import com.piddamsetty.rpihomecontrol.services.RpiService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,23 +11,38 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WebPoint {
 
-    RpiService rpiService = new RpiService();
+    FileServices fileServices;
+    RpiService rpiService;
+    String indexPage;
 
     @RequestMapping("/")
     public String root() {
-        System.out.println("New request for home");
-        String content = "index.html";
-        return content;
+        if(indexPage != null) {
+            initialize();
+        }
+        return indexPage;
     }
 
     @RequestMapping("/light1on")
-    public void pin1on() {
+    public String pin1on() {
        rpiService.turnOnPin1();
+       return root();
     }
 
     @RequestMapping("/light1off")
-    public void pin1off() {
+    public String pin1off() {
         rpiService.turnOffPin1();
+        return root();
+    }
+
+    private void initialize() {
+        try {
+            this.fileServices = new FileServices();
+            this.rpiService = new RpiService();
+            indexPage = fileServices.resourceFileRead("index.html");
+        } catch (Exception e) {
+            System.out.println("Unable to initialize WebPoint. Exception: "+e.getMessage());
+        }
     }
 
 }
