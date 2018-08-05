@@ -39,5 +39,13 @@ public class RpiService {
         }
     }
 
+    public void blinkPin1(Long delay) {
+        try {
+            pin1.blink(delay);
+        } catch (Exception e) {
+            System.out.println("Cannot turn off led 1. Exception: "+e.getMessage());
+        }
+    }
+
 
 }

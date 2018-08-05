@@ -7,7 +7,7 @@
     <link rel="shortcut icon" href="">
     <style>
         .button {
-            font: bold 11px Arial;
+            font: bold 40px Arial;
             text-decoration: none;
             background-color: #EEEEEE;
             color: #333333;
@@ -17,10 +17,51 @@
             border-bottom: 1px solid #333333;
             border-left: 1px solid #CCCCCC;
         }
+        .center {
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+        body {
+            background-color: lightblue;
+        }
+        .tablecenter{
+            padding: 2px 6px 2px 6px;
+        }
     </style>
 </head>
 <body>
-<a href="/light1on" class="button">Turn On</a>
-<a href="/light1off" class="button">Turn Off</a>
+<div class="center">
+<table class="tablecenter" >
+    <tr class="tablecenter" >
+        <td class="tablecenter" >
+            <a href="/light1on" class="button">Turn On</a>
+        </td>
+    </tr>
+    <tr class="tablecenter" >
+        <td class="tablecenter" >
+
+        </td>
+    </tr>
+    <tr class="tablecenter" >
+        <td class="tablecenter" >
+            <a href="/light1off" class="button">Turn Off</a>
+        </td>
+    </tr>
+    <tr class="tablecenter" >
+        <td class="tablecenter" >
+
+        </td>
+    </tr>
+    <tr class="tablecenter" >
+        <td class="tablecenter" >
+            <a href="/light1blink" class="button">Blink</a>
+        </td>
+    </tr>
+</table>
+</div>
 </body>
 </html>

@@ -38,6 +38,12 @@ public class WebPoint {
         response.sendRedirect("/");
     }
 
+    @RequestMapping("/light1blink")
+    public void pin1blink(HttpServletResponse response) throws IOException {
+        rpiService.blinkPin1(100L);
+        response.sendRedirect("/");
+    }
+
     private void initialize() {
         try {
             this.fileServices = new FileServices();
