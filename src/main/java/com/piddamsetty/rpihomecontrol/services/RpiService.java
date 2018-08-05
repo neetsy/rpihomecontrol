@@ -12,13 +12,31 @@ import com.pi4j.io.gpio.RaspiPin;
 public class RpiService {
     final GpioController gpio = GpioFactory.getInstance();
 
+    GpioPinDigitalOutput pin1;
+
+    public RpiService() {
+        try {
+            pin1 = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
+        } catch (Exception e) {
+            System.out.println("Cannot create led 1. Exception: "+e.getMessage());
+        }
+    }
+
     public void turnOnPin1(){
-        gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.HIGH);
+        try {
+           pin1.high();
+        } catch (Exception e) {
+            System.out.println("Cannot turn on led 1. Exception: "+e.getMessage());
+        }
 
     }
 
     public void turnOffPin1() {
-        gpio.provisionDigitalOutputPin(RaspiPin.GPIO_01, "MyLED", PinState.LOW);
+        try {
+           pin1.low();
+        } catch (Exception e) {
+            System.out.println("Cannot turn off led 1. Exception: "+e.getMessage());
+        }
     }
 
 
