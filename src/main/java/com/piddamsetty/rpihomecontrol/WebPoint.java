@@ -24,4 +24,9 @@ public class WebPoint {
        rpiService.turnOnPin1();
     }
 
+    @RequestMapping("/light1off")
+    public void pin1off() {
+        rpiService.turnOffPin1();
+    }
+
 }
