@@ -5,6 +5,9 @@ import com.piddamsetty.rpihomecontrol.services.RpiService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
 /**
  * Created by rewatiraman.
  */
@@ -24,15 +27,15 @@ public class WebPoint {
     }
 
     @RequestMapping("/light1on")
-    public String pin1on() {
+    public void pin1on(HttpServletResponse response) throws IOException {
        rpiService.turnOnPin1();
-       return root();
+        response.sendRedirect("/");
     }
 
     @RequestMapping("/light1off")
-    public String pin1off() {
+    public void pin1off(HttpServletResponse response) throws IOException {
         rpiService.turnOffPin1();
-        return root();
+        response.sendRedirect("/");
     }
 
     private void initialize() {
