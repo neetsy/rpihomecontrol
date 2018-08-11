@@ -51,6 +51,7 @@ public class RpiService {
         try {
             pin1.low();
             System.out.println(System.currentTimeMillis());
+            wait(5);
             pin1.high();
 
         } catch (Exception e) {
