@@ -50,6 +50,12 @@ public class WebPoint {
         response.sendRedirect("/");
     }
 
+    @RequestMapping("/operatedoor")
+    public void operateDoor(HttpServletResponse response) throws IOException {
+        rpiService.openOrCloseDoor();
+        response.sendRedirect("/");
+    }
+
     private void initialize() {
         try {
             this.fileServices = new FileServices();

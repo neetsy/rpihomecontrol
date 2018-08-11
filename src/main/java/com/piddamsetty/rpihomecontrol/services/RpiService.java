@@ -47,5 +47,15 @@ public class RpiService {
         }
     }
 
+    public void openOrCloseDoor() {
+        try {
+            pin1.low();
+            System.out.println(System.currentTimeMillis());
+            pin1.high();
 
+        } catch (Exception e) {
+            System.out.println("Cannot turn off led 1. Exception: " + e.getMessage());
+        }
+
+    }
 }
