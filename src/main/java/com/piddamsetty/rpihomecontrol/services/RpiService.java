@@ -53,7 +53,7 @@ public class RpiService {
         try {
             pin1.low();
             System.out.println(System.currentTimeMillis());
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(2);
             pin1.high();
 
         } catch (Exception e) {
